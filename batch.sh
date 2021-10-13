@@ -7,7 +7,7 @@
 #SBATCH -o ./analysis.out
 #SBATCH -e ./analysis.err
 
-# this chunk of code below is pulled from my .bashrc after initializing the conda install
+# this chunk of code below is pulled from my .bashrc after initializing the conda install; REPLACE IT WITH YOURS
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/where/ever/your/conda/environment/is/installed' 'shell.bash' 'hook' 2> /dev/null)"
@@ -23,7 +23,7 @@ fi
 unset __conda_setup
 
 # <<< conda initialize <<<
-conda activate OpenFold-amber
+conda activate Tinker_env
 
 time python3 write_dcd.py reps_160_k_50.00_run_051_sim.arc
 time python3 analyze_refinement.py reps_160_k_50.00_run_051_sim.pdb traj.dcd /gpfs/alpine/bip198/proj-shared/ForRuss_1ubq_model_amoeba_traj/reps_160_k_50.00_run_051_sim.pdb /gpfs/alpine/bip198/proj-shared/ForRuss_1ubq_xtal_amoeba_traj/1ubq_sim.pdb
